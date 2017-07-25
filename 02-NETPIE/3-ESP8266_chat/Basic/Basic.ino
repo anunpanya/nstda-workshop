@@ -4,6 +4,7 @@
 #include <ESP8266WiFi.h>
 #include <MicroGear.h>
 
+// ----- แก้ค่า config 6 ค่าข้างล่างนี้ --------------------------------------------------------
 const char* ssid     = "YOUR_WIFI_SSID";          // ชื่อ ssid
 const char* password = "YOUR_WIFI_PASSWORD";      // รหัสผ่าน wifi
 
@@ -11,6 +12,7 @@ const char* password = "YOUR_WIFI_PASSWORD";      // รหัสผ่าน wi
 #define KEY     "KEY"                       // ให้แทนที่ด้วย Key รวม
 #define SECRET  "SECRET"                    // ให้แทนที่ด้วย Secret รวม
 #define ALIAS   "YOUR_UNIQUE_ALIAS"         // แทนที่ด้วยหมายเลขของท่าน เช่น "A01"
+// --------------------------------------------------------------------------------------
 
 WiFiClient client;
 
