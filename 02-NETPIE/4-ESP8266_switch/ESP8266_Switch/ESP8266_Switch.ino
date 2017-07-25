@@ -1,27 +1,25 @@
 #include <ESP8266WiFi.h>
 #include <MicroGear.h>
 
-const char* ssid     = "YOUR_WIFI_SSID";          // ชื่อ ssid
-const char* password = "YOUR_WIFI_PASSWORD";      // รหัสผ่าน wifi
+const char* ssid     = "YOUR_WIFI_SSID";      // ชื่อ ssid
+const char* password = "YOUR_WIFI_PASSWORD";  // รหัสผ่าน wifi
 
-#define APPID   "APPID"                     // ให้แทนที่ด้วย AppID รวม
-#define KEY     "KEY"                       // ให้แทนที่ด้วย Key รวม
-#define SECRET  "SECRET"                    // ให้แทนที่ด้วย Secret รวม
+#define APPID   "APPID"                       // ให้แทนที่ด้วย AppID รวม
+#define KEY     "KEY"                         // ให้แทนที่ด้วย Key รวม
+#define SECRET  "SECRET"                      // ให้แทนที่ด้วย Secret รวม
+#define ALIAS   "YOUR_UNIQUE_ALIAS"           // แทนที่ด้วยหมายเลขของท่าน เช่น "A01"
 
-#define ALIAS   "YOUR_UNIQUE_ALIAS"         // แทนที่ด้วยหมายเลขของท่าน เช่น "A01"
-#define NEIGHBOR "NEIGHBOR_ALIAS"           // ชื่ออุปกรณ์ของเพื่อน เช่น "A02"
+#define NEIGHBOR "NEIGHBOR_ALIAS"             // ชื่ออุปกรณ์ของเพื่อน เช่น "A02"
 
-#define BUTTONPIN  D3               // ต่อกับปุ่ม Flash บนบอร์ด NodeMCU
-#define LEDPIN     LED_BUILTIN      // ต่อกับไฟ LED บนบอร์ด NodeMCU
+#define BUTTONPIN  D3                         // pin ที่ต่อกับปุ่ม Flash บนบอร์ด NodeMCU
+#define LEDPIN     LED_BUILTIN                // pin ที่ต่อกับไฟ LED บนบอร์ด NodeMCU
 
-int currentLEDState = 0;
-int lastLEDState = 1;
-int currentButtonState = 0;
+int currentLEDState = 1;      // ให้เริ่มต้นเป็น OFF หมายเหตุ ไฟ LED บนบอร์ดต่อแบบ active-low
+int lastLEDState = 0;
+int currentButtonState = 1;   // หมายเหตุ ปุ่ม flash ต่อเข้ากับ GPIO0 แบบ pull-up
 int lastButtonState = 0;
 
 WiFiClient client;
-
-int timer = 0;
 MicroGear microgear(client);
 
 void updateLED(int state) {
@@ -85,7 +83,9 @@ void loop() {
           lastLEDState = currentLEDState;
         }
 
-        currentButtonState = digitalRead(BUTTONPIN);
+        if (digitalRead(BUTTONPIN)==HIGH) currentButtonState = 0;
+        else currentButtonState = 1;
+
         if(currentButtonState != lastButtonState){
           microgear.chat(NEIGHBOR, currentButtonState);
           lastButtonState = currentButtonState;
