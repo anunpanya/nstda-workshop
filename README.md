@@ -9,7 +9,7 @@ https://docs.google.com/presentation/d/1Vagl-pFtZ1vnWT8DoVUfSGOcozx6pkGCqHgvBGRA
 https://docs.google.com/presentation/d/14eYYBt9s2QBeLMdg5VSiv1356H3mm6pwjA04MNW-1BU
 
 ### Part 3: IOT Development with NETPIE
-
+https://docs.google.com/presentation/d/1PmX1mmUx92KSQ8-exdWQYgDjfQFmUHOlhgMPmryw5CY
 
 ### Part 4: Feed
 https://docs.google.com/presentation/d/10vdljLitMlKAKRq1f9BCskrmM6aLvC6u5T22oqt5bXs
