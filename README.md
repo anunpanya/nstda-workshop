@@ -1,5 +1,8 @@
 # NSTDA workshop
 
+### การเตรียมเครื่องคอมพิวเตอร์สำหรับการทำ workshop
+https://docs.google.com/document/d/1z6CvZVwrr_Xkjn6EnHwPi074Fd7RZisp7_4SoDzH9c4
+
 ## Presentations
 
 ### Part 1: Development Kit
