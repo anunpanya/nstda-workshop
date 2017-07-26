@@ -29,8 +29,13 @@ int lastButtonState = 0;
 #define DHTTYPE   DHT22       // e.g. DHT11, DHT21, DHT22
 DHT dht(DHTPIN, DHTTYPE);
 
+float humid = 0;     // ค่าความชื้น
+float temp  = 0;     // ค่าอุณหภูมิ
+
 long lastDHTRead = 0;
 long lastDHTPublish = 0;
+
+long lastTimeFeed = 0;
 
 WiFiClient client;
 MicroGear microgear(client);
@@ -104,8 +109,8 @@ void loop() {
         // เซนเซอร์​ DHT อ่านถี่เกินไปไม่ได้ จะให้ค่า error เลยต้องเช็คเวลาครั้งสุดท้ายที่อ่านค่า
         // ว่าทิ้งช่วงนานพอหรือยัง ในที่นี้ตั้งไว้ 2 วินาที ก
         if(millis() - lastDHTRead > 2000){
-          float humid = dht.readHumidity();     // อ่านค่าความชื้น
-          float temp  = dht.readTemperature();  // อ่านค่าอุณหภูมิ
+          humid = dht.readHumidity();     // อ่านค่าความชื้น
+          temp  = dht.readTemperature();  // อ่านค่าอุณหภูมิ
           lastDHTRead = millis();
           
           Serial.print("Humid: "); Serial.print(humid); Serial.print(" %, ");
@@ -129,4 +134,3 @@ void loop() {
         microgear.connect(APPID); 
     }
 }
-
