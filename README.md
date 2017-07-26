@@ -22,8 +22,8 @@ https://docs.google.com/presentation/d/1E6pbUKtOydo_f5vuc0ilT_KtTnDZLYf03qWI9gcR
 https://docs.google.com/presentation/d/1e0tZOt_BXqjBLPSP87fFL8xPeQlpD5Zeb4Qr2ksA7wk
 
 ### Part 6: Pienode
+https://docs.google.com/presentation/d/1fwOn-dzgQXMFSuvB9XnJtWCFqXSrkkVq2iidPDvfVmk
 
-
-### Part 6: Conclusion
+### Part 7: Conclusion
 https://docs.google.com/presentation/d/1cu8A9r0jhbXAYx1GeWfulmDY8AReshL_WLg0g4-wHQM
 
