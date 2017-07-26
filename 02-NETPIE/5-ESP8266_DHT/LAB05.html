@@ -1,0 +1,74 @@
+<script src="https://cdn.netpie.io/microgear.js"></script>
+<script>
+	const APPID = <APPID>;
+	const KEY = <KEY>;
+	const SECRET = <SECRET>;
+
+	const ALIAS = "html5";
+
+	var microgear = Microgear.create({
+		key: KEY,
+		secret: SECRET,
+		alias : ALIAS
+	});
+
+	microgear.on('message',function(topic,msg) {
+		if(topic.startsWith("/"+APPID+"/dht")){
+			var idBox = topic.replace("/"+APPID+"/dht/","");
+			try{
+				var m = msg.split(",");
+				document.getElementById(idBox+"humid").innerHTML = m[0];
+				document.getElementById(idBox+"temp").innerHTML = m[1];
+			}catch(err) {
+				console.log(err);
+			}
+		}
+	});
+
+	microgear.on('connected', function() {
+		microgear.setAlias(ALIAS);
+		microgear.subscribe("/dht/+");
+		document.getElementById("data").innerHTML = "Now I am connected with netpie...";
+	});
+
+	microgear.connect(APPID);
+	
+</script>
+
+<style>
+	body{
+		text-align:center;
+		font-weight: bold;
+	}
+	.colum{
+		font-size:30px;
+		display: inline-block;
+		width: 150px;
+		text-align:center;
+		border: 1px solid #bbbbbb;
+	}
+	
+	.row{
+		display: block;
+	}
+</style>
+
+<div>ROW : <input type="number" id="r"> COLUM : <input type="number" id="c"> <input type="button" value="Create" onClick="createBox()"></div>
+<div id="data">___</div>
+<div id="box"></div>
+
+<script>
+	function createBox(){
+		var row = document.getElementById("r").value;
+    	var colum = document.getElementById("c").value;
+    	var htmltext = "";
+    	for(var y=0;y<row;y++){
+    		htmltext += "<div class='row'>";
+        	for(var x=0;x<colum;x++){
+        		htmltext += "<div class='colum' id='A"+y+""+x+"'>A"+y+""+x+"<br><span id='A"+y+""+x+"humid'></span> %<br><span id='A"+y+""+x+"temp'></span> *C</div>";
+        	}
+        	htmltext += "</div>";
+    	}
+    	document.getElementById("box").innerHTML = htmltext;
+	}
+</script>
