@@ -117,7 +117,7 @@ void loop() {
           lastDHTRead = millis();
           
           Serial.print("Humid: "); Serial.print(humid); Serial.print(" %, ");
-          Serial.print("Temp: "); Serial.print(temp); Serial.println(" °C ");
+          Serial.print("Temp: "); Serial.print(temp); Serial.println(" C ");
     
           // ตรวจสอบค่า humid และ temp เป็นตัวเลขหรือไม่
           if (isnan(humid) || isnan(temp)) {
