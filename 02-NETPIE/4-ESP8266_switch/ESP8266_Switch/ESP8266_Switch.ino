@@ -5,9 +5,9 @@
 const char* ssid     = "YOUR_WIFI_SSID";      // ชื่อ ssid
 const char* password = "YOUR_WIFI_PASSWORD";  // รหัสผ่าน wifi
 
-#define APPID   "APPID"                       // ให้แทนที่ด้วย AppID รวม
-#define KEY     "KEY"                         // ให้แทนที่ด้วย Key รวม
-#define SECRET  "SECRET"                      // ให้แทนที่ด้วย Secret รวม
+#define APPID   "nstdaworkshop"
+#define KEY     "Y386GFExIsbeRol"
+#define SECRET  "XOaKPHNY3imoev4b3FTH5SyMU"
 
 #define ALIAS   "YOUR_UNIQUE_ALIAS"           // แทนที่ด้วยหมายเลขของท่าน เช่น "A01"
 #define NEIGHBOR "NEIGHBOR_ALIAS"             // ชื่ออุปกรณ์ของเพื่อน เช่น "A02"

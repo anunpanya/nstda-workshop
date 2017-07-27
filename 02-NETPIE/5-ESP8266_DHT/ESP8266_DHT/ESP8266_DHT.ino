@@ -1,14 +1,14 @@
 #include <ESP8266WiFi.h>
 #include <MicroGear.h>
-#include "DHT.h"                              // library สำหรับอ่านค่า DHT Sensor ต้องติดตั้ง DHT sensor library by Adafruit v1.2.3 ก่อน
+#include "DHT.h"
 
 // ----- แก้ค่า config 7 ค่าข้างล่างนี้ --------------------------------------------------------
 const char* ssid     = "YOUR_WIFI_SSID";      // ชื่อ ssid
 const char* password = "YOUR_WIFI_PASSWORD";  // รหัสผ่าน wifi
 
-#define APPID   "APPID"                       // ให้แทนที่ด้วย AppID รวม
-#define KEY     "KEY"                         // ให้แทนที่ด้วย Key รวม
-#define SECRET  "SECRET"                      // ให้แทนที่ด้วย Secret รวม
+#define APPID   "nstdaworkshop"
+#define KEY     "Y386GFExIsbeRol"
+#define SECRET  "XOaKPHNY3imoev4b3FTH5SyMU"
 
 #define ALIAS   "YOUR_UNIQUE_ALIAS"           // แทนที่ด้วยหมายเลขของท่าน เช่น "A01"
 #define NEIGHBOR "NEIGHBOR_ALIAS"             // ชื่ออุปกรณ์ของเพื่อน เช่น "A02"
