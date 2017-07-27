@@ -28,7 +28,7 @@
 	microgear.on('connected', function() {
 		microgear.setAlias(ALIAS);
 		microgear.subscribe("/dht/+");
-		document.getElementById("data").innerHTML = "Now I am connected with netpie...";
+		document.getElementById("data").innerHTML = "<font color=#dddddd>Connected to netpie...</font>";
 	});
 
 	microgear.connect(APPID);
@@ -79,8 +79,6 @@
     	for(var y=0;y<row;y++){
     		htmltext += "<div class='row'>";
         	for(var x=0;x<column;x++){
-
-//        		htmltext += "<div class='column' id='A"+y+""+x+"'>A"+y+""+x+"<br><span id='A"+y+""+x+"humid'></span> %<br><span id='A"+y+""+x+"temp'></span> *C</div>";
 			
 				var k = x + y*column;
 				var id = k>=10?k:'0'+k;
@@ -91,6 +89,5 @@
     	}
     	document.getElementById("box").innerHTML = htmltext;
 	}
-
 	createBox();
 </script>
