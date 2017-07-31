@@ -11,16 +11,18 @@
 	});
 
 	microgear.on('message',function(topic,msg) {
-		document.getElementById("data").innerHTML = msg;
+		document.getElementById("data").innerHTML += 'Receive a messsage --> ' +msg + '<br>';
 	});
 
 	var k = 0;
 	microgear.on('connected', function() {
 		microgear.setAlias(ALIAS);
-		document.getElementById("data").innerHTML = "Now I am connected with netpie...";
+		document.getElementById("data").innerHTML = 'Now I am connected with netpie...<br>';
 		setInterval(function() {
 			k = k+1;
-			microgear.chat(NEIGHBOR,"Hello from "+ALIAS+" #"+k);
+			var text = "Hello from "+ALIAS+" #"+k;
+			document.getElementById("data").innerHTML += 'sending chat message to '+NEIGHBOR+' : "'+text+'" --><br>';
+			microgear.chat(NEIGHBOR,text);
 		},1000);
 	});
 	microgear.connect(APPID);	

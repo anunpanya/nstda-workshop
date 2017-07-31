@@ -11,20 +11,19 @@
 	});
 
 	microgear.on('message',function(topic,msg) {
-		document.getElementById("data").innerHTML = msg;
+		document.getElementById("data").innerHTML = 'Receive a messsage --> ' +msg + '<br>';
+		var text = 'Hi this is '+ALIAS+'. This is what I get from you : "'+msg+'"<br>';
+		document.getElementById("data").innerHTML += 'Send reply --> ' +text + '<br>';
+		microgear.chat(NEIGHBOR,text);
 	});
 
 	var k = 0;
 	microgear.on('connected', function() {
 		microgear.setAlias(ALIAS);
-		document.getElementById("data").innerHTML = "Now I am connected with netpie...";
-		setInterval(function() {
-			k = k+1;
-			microgear.chat(NEIGHBOR,"Hello from "+ALIAS+" #"+k);
-		},1000);
+		document.getElementById("data").innerHTML = "Now I am connected with netpie...<br>";
 	});
 	microgear.connect(APPID);	
 </script>
 
-<div>I am : alice</div>
+<div>I am : bob</div>
 <div id="data">_____</div>
