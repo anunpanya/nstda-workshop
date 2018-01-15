@@ -1,4 +1,4 @@
-# NSTDA workshop
+# NETPIE Workshop (NodeMCU DHT22)
 
 ### การเตรียมเครื่องคอมพิวเตอร์สำหรับการทำ workshop
 https://docs.google.com/document/d/1z6CvZVwrr_Xkjn6EnHwPi074Fd7RZisp7_4SoDzH9c4
